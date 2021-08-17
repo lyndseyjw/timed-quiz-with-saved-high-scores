@@ -84,8 +84,8 @@ if (startQuiz){
 
                 } else if (answer === "not-answer") {
 
-                    timer.setAttribute("style", "color: red;");
                     secondsLeft -= 5;
+                    timer.setAttribute("style", "color: red;");
                 }
             }
         }); 
@@ -143,12 +143,11 @@ function question2(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                timer.setAttribute("style", "color: red;");
                 secondsLeft -= 5;
+                timer.setAttribute("style", "color: red;");
             }
         }
     });
-
 }
 
 function question3(score, secondsLeft) {
@@ -202,8 +201,8 @@ function question3(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                timer.setAttribute("style", "color: red;");
                 secondsLeft -= 5;
+                timer.setAttribute("style", "color: red;");
             }
         }
     });
@@ -260,8 +259,8 @@ function question4(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                timer.setAttribute("style", "color: red;");
                 secondsLeft -= 5;
+                timer.setAttribute("style", "color: red;");
             }
         }
     });
@@ -319,8 +318,8 @@ function question5(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                timer.setAttribute("style", "color: red;");
                 secondsLeft -= 5;
+                timer.setAttribute("style", "color: red;");
             }
         }
     });
@@ -383,6 +382,28 @@ page4.addEventListener("click", function() {
     page4paragraph.textContent = localStorage.getItem ("high-score", highScore);
     page4paragraph.setAttribute("style", "margin-bottom: 20px;");
     rotatingPages.appendChild(page4paragraph);
+
+    var page4button = document.createElement("button");
+    page4button.textContent = "Retake Quiz";
+    rotatingPages.appendChild(page4button);
+    page4button.setAttribute("data-state", "reload");
+    page4button.setAttribute("style", "display: block; margin: 20px auto; padding: 15px;");
+
+    rotatingPages.addEventListener("click", function(event) {
+
+        var element = event.target;
+
+        if (element.matches("button")) {
+
+            var answer = element.getAttribute("data-state");
+
+            if (answer === "reload") {
+
+                location.reload();
+
+            }
+        }
+    });
 });
 
 // question 1-4 complementary of : https://www.proprofs.com/quiz-school/story.php?title=computer-programming-ii-exam-multiple-choice
