@@ -6,7 +6,9 @@ var startQuiz = document.querySelector("#start-quiz");
 
 var secondsLeft = 60;
 var score = 0;
+
 var timerInterval;
+var highScore;
 
 function startTimer() {
 
@@ -76,12 +78,14 @@ if (startQuiz){
                 if (answer === "answer") {
 
                     score ++;
+                    timer.setAttribute("style", "color: black;");
                     rotatingPages.innerHTML = "";
                     question2(score, secondsLeft);
 
                 } else if (answer === "not-answer") {
 
-                    secondsLeft - 5;
+                    timer.setAttribute("style", "color: red;");
+                    secondsLeft -= 5;
                 }
             }
         }); 
@@ -133,12 +137,14 @@ function question2(score, secondsLeft) {
             if (answer === "answer") {
 
                 score ++;
+                timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
                 question3(score, secondsLeft);
 
-            } else {
+            } else if (answer === "not-answer") {
 
-                secondsLeft - 5;
+                timer.setAttribute("style", "color: red;");
+                secondsLeft -= 5;
             }
         }
     });
@@ -190,12 +196,14 @@ function question3(score, secondsLeft) {
             if (answer === "answer") {
 
                 score ++;
+                timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
                 question4(score, secondsLeft);
 
-            } else {
+            } else if (answer === "not-answer") {
 
-                secondsLeft - 5;
+                timer.setAttribute("style", "color: red;");
+                secondsLeft -= 5;
             }
         }
     });
@@ -246,12 +254,14 @@ function question4(score, secondsLeft) {
             if (answer === "answer") {
 
                 score ++;
+                timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
                 question5(score, secondsLeft);
 
-            } else {
+            } else if (answer === "not-answer") {
 
-                secondsLeft - 5;
+                timer.setAttribute("style", "color: red;");
+                secondsLeft -= 5;
             }
         }
     });
@@ -302,13 +312,15 @@ function question5(score, secondsLeft) {
             if (answer === "answer") {
 
                 score ++;
+                timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
                 timer.textContent = "";
                 thirdPage(score);
 
-            } else {
+            } else if (answer === "not-answer") {
 
-                secondsLeft - 5;
+                timer.setAttribute("style", "color: red;");
+                secondsLeft -= 5;
             }
         }
     });
@@ -351,8 +363,8 @@ function thirdPage(score) {
 
             if (answer === "submit") {
 
-                localStorage.setItem("score", score);
-                localStorage.setItem("initials", page3input.value);
+                highScore = page3input.value + " - " + score;
+                localStorage.setItem("high-score", highScore);
             }
         }
     });
@@ -368,7 +380,8 @@ page4.addEventListener("click", function() {
     page4header.setAttribute("style", "text-align: center;");
 
     var page4paragraph = document.createElement("p");
-    page4paragraph.textContent = localStorage.getItem ("score", score);
+    page4paragraph.textContent = localStorage.getItem ("high-score", highScore);
+    page4paragraph.setAttribute("style", "margin-bottom: 20px;");
     rotatingPages.appendChild(page4paragraph);
 });
 
