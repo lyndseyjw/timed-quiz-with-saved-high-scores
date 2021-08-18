@@ -15,7 +15,7 @@ function startTimer() {
     timerInterval = setInterval(function() {
 
         secondsLeft--;
-        timer.textContent = secondsLeft
+        timer.textContent = secondsLeft;
 
         if(secondsLeft === 0) {
 
@@ -85,6 +85,7 @@ if (startQuiz){
                 } else if (answer === "not-answer") {
 
                     secondsLeft -= 5;
+                    timer.textContent = secondsLeft;
                     timer.setAttribute("style", "color: red;");
                 }
             }
@@ -142,8 +143,11 @@ function question2(score, secondsLeft) {
                 question3(score, secondsLeft);
 
             } else if (answer === "not-answer") {
-
-                secondsLeft -= 5;
+                
+                console.log("HERE I AM!");
+                secondsLeft = secondsLeft - 5;
+                timer.textContent = secondsLeft;
+                console.log(secondsLeft);
                 timer.setAttribute("style", "color: red;");
             }
         }
@@ -201,7 +205,7 @@ function question3(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                secondsLeft -= 5;
+                secondsLeft = secondsLeft - 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
@@ -259,7 +263,7 @@ function question4(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                secondsLeft -= 5;
+                secondsLeft = secondsLeft - 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
@@ -318,7 +322,7 @@ function question5(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                secondsLeft -= 5;
+                secondsLeft = secondsLeft - 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
