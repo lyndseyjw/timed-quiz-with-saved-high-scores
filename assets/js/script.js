@@ -80,12 +80,11 @@ if (startQuiz){
                     score ++;
                     timer.setAttribute("style", "color: black;");
                     rotatingPages.innerHTML = "";
-                    question2(score, secondsLeft);
+                    question2(score);
 
                 } else if (answer === "not-answer") {
 
                     secondsLeft -= 5;
-                    timer.textContent = secondsLeft;
                     timer.setAttribute("style", "color: red;");
                 }
             }
@@ -93,7 +92,7 @@ if (startQuiz){
     });
 }
 
-function question2(score, secondsLeft) {
+function question2(score) {
 
     var page2header = document.createElement("h2");
     page2header.textContent = "2. Which of the sets of statements below will add 1 to x if x is positive and subtract 1 from x if x is negative but leave x alone if x is 0?";
@@ -140,21 +139,18 @@ function question2(score, secondsLeft) {
                 score ++;
                 timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
-                question3(score, secondsLeft);
+                question3(score);
 
             } else if (answer === "not-answer") {
                 
-                console.log("HERE I AM!");
-                secondsLeft = secondsLeft - 5;
-                timer.textContent = secondsLeft;
-                console.log(secondsLeft);
+                secondsLeft -= 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
     });
 }
 
-function question3(score, secondsLeft) {
+function question3(score) {
 
     var page2header = document.createElement("h2");
     page2header.textContent = "3. _______ is the process of finding errors and fixing them within a program.";
@@ -201,18 +197,18 @@ function question3(score, secondsLeft) {
                 score ++;
                 timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
-                question4(score, secondsLeft);
+                question4(score);
 
             } else if (answer === "not-answer") {
 
-                secondsLeft = secondsLeft - 5;
+                secondsLeft -= 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
     });
 }
 
-function question4(score, secondsLeft) {
+function question4(score) {
 
     var page2header = document.createElement("h2");
     page2header.textContent = "4. Sal needs to execute a section of code ten times within a program. Compare the selection structures below and select which one meets the needs identified.";
@@ -259,18 +255,18 @@ function question4(score, secondsLeft) {
                 score ++;
                 timer.setAttribute("style", "color: black;");
                 rotatingPages.innerHTML = "";
-                question5(score, secondsLeft);
+                question5(score);
 
             } else if (answer === "not-answer") {
 
-                secondsLeft = secondsLeft - 5;
+                secondsLeft -= 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
     });
 }    
 
-function question5(score, secondsLeft) {
+function question5(score) {
 
     var page2header = document.createElement("h2");
     page2header.textContent = "5. Which of the following attributes is used to open an hyperlink in new tab?";
@@ -322,7 +318,7 @@ function question5(score, secondsLeft) {
 
             } else if (answer === "not-answer") {
 
-                secondsLeft = secondsLeft - 5;
+                secondsLeft -= 5;
                 timer.setAttribute("style", "color: red;");
             }
         }
