@@ -6,7 +6,13 @@ This quiz was created to challenge my skills with dynamically created elements i
 
 This biggest challenge of this application was learning how to create content that would change based on user interaction. This is the first time I have worked with this concept so the code can be a bit DRY. It gave me some great focus areas of where I need to learn to condense my code. I have yet to completely wrap my mind around for loops but this project was a great lesson in showing where a possible for loop could be entered i.e. for each question & answer options. For now, I needed to separate each one so that I could understand the basic processes of how a computer reads & renders information to the page. A great exercise in Javascript dynamic functioning & really gave me great appreciation for all things Javascript! I can see most of my projects utilizing a majority of Javscript code moving forward.
 
+Technologies used : HTML5, Advanced CSS, Javascript
+
 To access the deployed application, please click here : https://lyndseyjw.github.io/timed-quiz-with-saved-high-scores/
+
+This project is licensed under the terms of the MIT license.
+
+You may contact the sole contributor at lyndseyjwatson@gmail.com
 
 ![Coding Quiz Intro](./assets/images/coding-quiz-intro.png)
 ![Started Quiz with Timer](./assets/images/started-quiz-with-timer.png)
